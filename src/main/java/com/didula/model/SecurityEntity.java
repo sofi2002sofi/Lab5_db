@@ -34,10 +34,10 @@ public class SecurityEntity {
 
   }
 
-  public SecurityEntity(Integer id, String password, UserEntity user) {
+  public SecurityEntity(Integer id, String password, UserEntity userByUserId) {
     this.id = id;
     this.password = password;
-    this.userByUserId = user;
+    this.userByUserId = userByUserId;
   }
 
   @Override
@@ -68,13 +68,13 @@ public class SecurityEntity {
     return result;
   }
 
-  @OneToOne
-  @JoinColumn(name = "user_id", referencedColumnName = "id")
+  @OneToOne(fetch= FetchType.LAZY)
+  @JoinColumn(name = "user_id", referencedColumnName = "id", nullable = false)
   public UserEntity getUserByUserId() {
     return userByUserId;
   }
 
-  public void setUserByUserId(UserEntity user) {
+  public void setUserByUserId(UserEntity userByUserId) {
     this.userByUserId = userByUserId;
   }
 

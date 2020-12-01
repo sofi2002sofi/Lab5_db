@@ -66,12 +66,15 @@ public class UserEntity {
     this.birthYear = birthYear;
   }
 
-  public UserEntity() {
+  public UserEntity() {}
 
-  }
-
-  public UserEntity(Integer id, String fullName, String forumsName, String email,
-                    Integer birthYear, GenderEntity genderByGenderId) {
+  public UserEntity(
+          Integer id,
+          String fullName,
+          String forumsName,
+          String email,
+          Integer birthYear,
+          GenderEntity genderByGenderId) {
     this.id = id;
     this.fullName = fullName;
     this.forumsName = forumsName;

@@ -37,11 +37,11 @@ public class ModuleEntity {
   @Basic
   @Column(name = "deadline_datetime")
   public Timestamp getDeadlineDatetime() {
-    return deadlineDatetime;
+    return new Timestamp(deadlineDatetime.getTime());
   }
 
   public void setDeadlineDatetime(Timestamp deadlineDatetime) {
-    this.deadlineDatetime = deadlineDatetime;
+    this.deadlineDatetime = new Timestamp(deadlineDatetime.getTime());
   }
 
   @Basic
@@ -71,7 +71,7 @@ public class ModuleEntity {
                       Byte overdue, CourseInfoEntity courseInfoByCourseInfoId) {
     this.id = id;
     this.moduleName = moduleName;
-    this.deadlineDatetime = deadlineDatetime;
+    this.deadlineDatetime = new Timestamp(deadlineDatetime.getTime());
     this.completed = completed;
     this.overdue = overdue;
     this.courseInfoByCourseInfoId = courseInfoByCourseInfoId;

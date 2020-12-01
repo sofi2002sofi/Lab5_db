@@ -6,13 +6,12 @@ import com.didula.model.CourseEntity;
 import org.hibernate.Session;
 
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 
 public class CourseDAOimpl  implements GeneralDAO<CourseEntity, Integer> {
 
   public List<CourseEntity> findAll() throws SQLException {
-    List<CourseEntity> courses = new ArrayList<CourseEntity>();
+    List<CourseEntity> courses;
 
     try (Session session = SessionManager.getSession()) {
       session.beginTransaction();

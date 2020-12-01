@@ -6,13 +6,12 @@ import com.didula.model.MessageEntity;
 import org.hibernate.Session;
 
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 
 public class MessageDAOimpl implements GeneralDAO<MessageEntity, Integer> {
 
   public List<MessageEntity> findAll() throws SQLException {
-    List<MessageEntity> messages = new ArrayList<MessageEntity>();
+    List<MessageEntity> messages;
 
     try (Session session = SessionManager.getSession()) {
       session.beginTransaction();

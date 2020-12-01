@@ -6,13 +6,12 @@ import com.didula.model.SecurityEntity;
 import org.hibernate.Session;
 
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 
 public class SecurityDAOimpl implements GeneralDAO<SecurityEntity, Integer> {
 
   public List<SecurityEntity> findAll() throws SQLException {
-    List<SecurityEntity> securities = new ArrayList<SecurityEntity>();
+    List<SecurityEntity> securities;
 
     try (Session session = SessionManager.getSession()) {
       session.beginTransaction();

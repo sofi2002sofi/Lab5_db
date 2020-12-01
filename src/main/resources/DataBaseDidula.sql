@@ -146,11 +146,11 @@ INSERT INTO user (full_name, forums_name, email, birth_year, gender_id) VALUES
      ('Taras Leshchyshyn', 'lyndexter', 'tes@gmail.com',	2002, 1),
      ('Rostyslav Oryshchak', 'bigWave', 'rost@gmail.com', 2002, 1),
      ('Andriiy Peleno', 'andriiPeleno', 'andr@gmail.com', 2001, 1),
-     ('Maxym Zvarych', 'megatashcher', 'megatashcher@gmail.com', 2002, null),
+     ('Maxym Zvarych', 'megatashcher', 'megatashcher@gmail.com', 2002, 1),
      ('Dmytro Buchkovsky', 'dimaster', 'dima@gmail.com', null, 1),
-     ('Marko Topolevsky', 'marko', 'marko@gmail.com', null, null),
+     ('Marko Topolevsky', 'marko', 'marko@gmail.com', null, 1),
      ('Nadiia Zakcharchyn', 'nadiika', 'nadia@gmail.com', 2002, 2),
-     ('Natalia Kost', 'nklighted', 'natalia@gmail.com',	2002, null);
+     ('Natalia Kost', 'nklighted', 'natalia@gmail.com',	2002, 2);
 
 INSERT INTO security (password, user_id) VALUES
 	 ('12345678', 5),

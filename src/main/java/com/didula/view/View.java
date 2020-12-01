@@ -14,7 +14,7 @@ public class View {
 
   private final Map<String, String> menu ;
   private final Map<String, Printable> methodsMenu ;
-  private static final Scanner input = new Scanner(System.in);
+  private static final Scanner input = new Scanner(System.in, "UTF-8");
 
   private static final CourseControllerImpl courseController = new CourseControllerImpl();
   private static final AnswerControllerImpl answerController = new AnswerControllerImpl();
@@ -495,7 +495,7 @@ public class View {
     System.out.println("Enter start date of the course info: ");
     SimpleDateFormat formatterDate = new SimpleDateFormat("yyyy-MM-dd");
     String dateString = input.nextLine();
-    java.util.Date date = formatterDate.parse(dateString);
+    Date date = formatterDate.parse(dateString);
     final java.sql.Date enteredStartDate = convertUtilDateToSql(date);
 
     System.out.println("Enter completion in percents of the course info :");
@@ -516,7 +516,7 @@ public class View {
             enteredAvailableMessage, enteredCourse, enteredUser);
   }
 
-  private static java.sql.Date convertUtilDateToSql(java.util.Date uDate) {
+  private static java.sql.Date convertUtilDateToSql(Date uDate) {
     return new java.sql.Date(uDate.getTime());
   }
 

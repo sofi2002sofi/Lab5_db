@@ -6,13 +6,12 @@ import com.didula.model.ModuleEntity;
 import org.hibernate.Session;
 
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 
 public class ModuleDAOimpl implements GeneralDAO<ModuleEntity, Integer> {
 
   public List<ModuleEntity> findAll() throws SQLException {
-    List<ModuleEntity> modules = new ArrayList<ModuleEntity>();
+    List<ModuleEntity> modules;
 
     try (Session session = SessionManager.getSession()) {
       session.beginTransaction();

@@ -6,13 +6,12 @@ import com.didula.model.AnswerEntity;
 import org.hibernate.Session;
 
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 
 public class AnswerDAOimpl implements GeneralDAO<AnswerEntity, Integer> {
 
   public List<AnswerEntity> findAll() throws SQLException {
-    List<AnswerEntity> answers = new ArrayList<AnswerEntity>();
+    List<AnswerEntity> answers;
 
     try (Session session = SessionManager.getSession()) {
       session.beginTransaction();

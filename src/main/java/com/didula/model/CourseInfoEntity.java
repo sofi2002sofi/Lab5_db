@@ -32,11 +32,11 @@ public class CourseInfoEntity {
   @Basic
   @Column(name = "start_date", nullable = false)
   public Date getStartDate() {
-    return startDate;
+    return new Date(startDate.getTime());
   }
 
   public void setStartDate(Date startDate) {
-    this.startDate = startDate;
+    this.startDate = new Date(startDate.getTime());
   }
 
   @Basic
@@ -66,7 +66,7 @@ public class CourseInfoEntity {
   public CourseInfoEntity(Integer id, Date startDate, BigDecimal completionInPercents, Byte availableMessage,
                           CourseEntity courseByCourseId, UserEntity userByUserId) {
     this.id = id;
-    this.startDate = startDate;
+    this.startDate = new Date(startDate.getTime());
     this.completionInPercents = completionInPercents;
     this.availableMessage = availableMessage;
     this.courseByCourseId = courseByCourseId;
@@ -136,7 +136,7 @@ public class CourseInfoEntity {
     return modulesEntity;
   }
 
-  public void setModulesEntity(Set<ModuleEntity> moduleEntity) {
+  public void setModulesEntity(Set<ModuleEntity> modulesEntity) {
     this.modulesEntity = modulesEntity;
   }
 

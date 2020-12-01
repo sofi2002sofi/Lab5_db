@@ -6,13 +6,12 @@ import com.didula.model.GenderEntity;
 import org.hibernate.Session;
 
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 
 public class GenderDAOimpl implements GeneralDAO<GenderEntity, Integer> {
 
   public List<GenderEntity> findAll() throws SQLException {
-    List<GenderEntity> genders = new ArrayList<GenderEntity>();
+    List<GenderEntity> genders;
 
     try (Session session = SessionManager.getSession()) {
       session.beginTransaction();
